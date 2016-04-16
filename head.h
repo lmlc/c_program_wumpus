@@ -12,6 +12,7 @@ struct MAN{
 
 #define UNROAD 0;
 #define BEENROAD 1;
+#define MONSTER 2;
 #define MONEY 3;
 #define WALL 4;
 #define TRAP 5;
