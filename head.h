@@ -6,7 +6,7 @@ struct MAN{
     int x;
     int y;
     int moneycount;
-    int lifestyle;//(2:die without money) (1:killed by monster)(0:lived)
+    int lifestyle;//(3:killed by thorn)(2:die without money) (1:killed by monster)(0:lived)
 };
 
 #define UNROAD 0;
