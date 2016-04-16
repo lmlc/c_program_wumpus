@@ -7,7 +7,7 @@ struct MAN{
     int y;
     int moneycount;
     int lifestyle;//(3:killed by thorn)(2:die without money) (1:killed by monster)(0:lived)
-    int faceto;//(0:up)(1:left)(2:down)(3:right)
+    int faceto;//(0:east)(1:south)(2:west)(3:north)
 };
 
 #define UNROAD 0;
