@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<conio.h>
 #include"head.h"
 #include"map.c"
 #include"move.c"
