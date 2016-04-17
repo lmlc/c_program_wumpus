@@ -1,4 +1,4 @@
-#include<stdio.h>
+ #include<stdio.h>
 #include"head.h"
 #include<string.h>
 void paihangbang_r()
