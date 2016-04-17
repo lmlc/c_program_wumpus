@@ -44,7 +44,7 @@ void paihangbang_w(int money, char name[])
     }
     strcpy(person[i].a,num);
     person[i].money=money;
-    printf("ÄúµÄÅÅÃûÎª%d"£¬i+1);
+    printf("æ‚¨çš„æ’åä¸º:%d", i+1);
     FILE *fp1=fopen("paihangbang.txt","w");
     for(i=0;i<=total;i++)
     {
