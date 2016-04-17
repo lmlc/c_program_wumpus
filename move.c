@@ -54,7 +54,7 @@ int move(int map[1000][1000], int a, int b, struct MAN player)   //返回1代表
                         }
                         else
                         {
-                                printf ("您钱不够，射不了剑!");
+                                printf ("你的钱不够买弓箭！");
                         }
                 }
                 else if (ch=='q')      //前进
