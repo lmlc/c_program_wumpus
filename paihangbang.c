@@ -1,11 +1,10 @@
- #include<stdio.h>
-#include"head.h"
-#include<string.h>
+
 void paihangbang_r()
 {
 
     FILE *fp=fopen("paihangbang.txt","r+");
     struct PERSON{char a[20];int money;}person[10];
+    int i;
     for(i=0;i<10;i++)
     {
 
@@ -21,8 +20,9 @@ void paihangbang_r()
 
 void paihangbang_w(int money, char name[])
 {
+    char num[20];
     FILE *fp=fopen("paihangbang.txt","r");
-    struct PERSON{char [20];int money;}person[200];
+    struct PERSON{char a[20];int money;}person[200];
     int i=0;
     while(!feof(fp))
     {
@@ -42,6 +42,7 @@ void paihangbang_w(int money, char name[])
 
         person[j]=person[j-1];
     }
+    scanf("%s",num);
     strcpy(person[i].a,num);
     person[i].money=money;
     printf("您的排名为:%d\n", i+1);

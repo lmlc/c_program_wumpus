@@ -1,0 +1,11 @@
+void printmap(int m_map[100][100],struct MAN *player);
+void allocate(int m_map[100][100],int monsters,int traps,int money,int weith,int height);
+void creatmap(int m_map[100][100],int condition,int monsters,int traps,int money,struct MAN *player);
+void menu();
+void help();
+void start(int m_map[100][100],struct MAN *player);
+int move(int map[100][100],struct MAN *player);
+void paihangbang_r();
+void paihangbang_w(int money, char name[]);
+void tip_move(int map[100][100],struct MAN *player);
+int tip_shoot(int map[100][100],struct MAN *player);

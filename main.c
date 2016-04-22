@@ -1,6 +1,10 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<string.h>
 #include<conio.h>
-#include"head.h"
+#include"engine.h"
+#include"function.h"
 #include"map.c"
 #include"move.c"
 #include"menu.c"
@@ -14,7 +18,7 @@ int main(){
     man.x=1;
     man.y=1;
     man.moneycount=100;
-    man.lifetyle=0;
+    man.lifestyle=0;
     man.faceto=1;
     
     //全局的monsters

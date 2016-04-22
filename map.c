@@ -1,5 +1,3 @@
-#include"head.h"
-#include<time.h>
 
 
 
@@ -30,12 +28,7 @@ void allocate(int m_map[100][100],int monsters,int traps,int money,int weith,int
         for (y=1; y<height-1; y++) {
             m_map[x][y]=UNROAD;
         }
-    for(x=0;x<100;x++)
-        for (u=0; y<100; y++) {
-            if(m_map[x][y]!=UNROAD&&m_map[x][y]!=WALL)
-                m_map[x][y] = -1;
-        }
-    //分配墙壁与路 -1为墙以外的空间
+
     
     srand((unsigned) time(NULL));
     
@@ -63,7 +56,8 @@ void allocate(int m_map[100][100],int monsters,int traps,int money,int weith,int
 }
 
 
-void creatmap(int m_map[100][100],int condition,int monsters,int traps,int money){
+void creatmap(int m_map[100][100],int condition,int monsters,int traps,int money,struct MAN *player)
+{
     
     int weith = 10;
     int height = 8;
@@ -93,7 +87,7 @@ void creatmap(int m_map[100][100],int condition,int monsters,int traps,int money
         default:
             break;
     }
-    printmap(m_map,&man);
+    printmap(m_map,player);
 }
 
 

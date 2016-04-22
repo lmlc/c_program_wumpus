@@ -1,4 +1,3 @@
-#include"head.h"
 
 extern int monsters;
 
@@ -6,45 +5,45 @@ int move(int map[100][100],struct MAN *player)   //返回1代表赢了，返回0
 {
         char ch;
         int winorlose = 0;
-        tip_move(player, map);
-        while (!kbhit())           //判断键盘有无输入
+        tip_move(map,player);
+        while (1)           //判断键盘有无输入
         {
                 ch=getch();
                 if (ch=='w')       //方向
                 {
                         player->faceto=3;         //改变方向
                         player->moneycount-=1;    //扣钱
-                        printmap (player, map);  //打印地图
-                        tip_move(player, map);   //移动的提示
+                        printmap (map,player);  //打印地图
+                        tip_move(map,player);   //移动的提示
                 }
                 else if (ch=='a')
                 {
                         player->faceto=2;
                         player->moneycount-=1;
-                        printmap (player, map);
-                        tip_move(player, map);
+                        printmap (map,player);
+                        tip_move(map,player);
                 }
             
                 else if (ch=='s')
                 {
                         player->faceto=1;
                         player->moneycount-=1;
-                        printmap (player, map);
-                        tip_move(player, map);
+                        printmap (map,player);
+                        tip_move(map,player);
                 }
                 else if (ch=='d')
                 {
                         player->faceto=0;
                         player->moneycount-=1;
-                        printmap (player, map);
-                        tip_move(player, map);
+                        printmap (map,player);
+                        tip_move(map,player);
                 }
                 else if (ch==' ')                  //射箭
                 {
                         if (player->moneycount>=10)
                         {
                              player->moneycount-=10;
-                            if(tip_shoot(player, map)==1)//tip_shoot函数返回了1代表怪物被射死
+                            if(tip_shoot(map,player)==1)//tip_shoot函数返回了1代表怪物被射死
                             {
                                 monsters--;
                             }
@@ -74,9 +73,9 @@ int move(int map[100][100],struct MAN *player)   //返回1代表赢了，返回0
                                 player->y--;
                         }
                         player->moneycount-=1;
-                        tip_move(player, map);
-                        map[player->x][player->y]==BEENLOAD;    //走过的路
-                        printmap (player, map);
+                        tip_move(map,player);
+                        map[player->x][player->y]=BEENROAD;    //走过的路
+                        printmap (map,player);
                         if (!player->lifestyle)//死了
                         {
                                 return 0;
