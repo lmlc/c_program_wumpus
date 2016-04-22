@@ -1,4 +1,5 @@
-
+#include "engine.h"
+#include "function.h"
 extern int monsters;
 
 int move(int map[100][100],struct MAN *player)   //返回1代表赢了，返回0代表输了
@@ -8,6 +9,7 @@ int move(int map[100][100],struct MAN *player)   //返回1代表赢了，返回0
         tip_move(map,player);
         while (1)           //判断键盘有无输入
         {
+                map[player->x][player->y]=BEENROAD;
                 ch=getch();
                 if (ch=='w')       //方向
                 {
@@ -23,7 +25,7 @@ int move(int map[100][100],struct MAN *player)   //返回1代表赢了，返回0
                         printmap (map,player);
                         tip_move(map,player);
                 }
-            
+
                 else if (ch=='s')
                 {
                         player->faceto=1;
@@ -58,25 +60,25 @@ int move(int map[100][100],struct MAN *player)   //返回1代表赢了，返回0
                 {
                         if (player->faceto==0)
                         {
-                                player->x++;
+                                player->y++;
                         }
                         else if (player->faceto==1)
                         {
-                                player->y++;
+                                player->x++;
                         }
                         else if (player->faceto==2)
                         {
-                                player->x--;
+                                player->y--;
                         }
                         else if (player->faceto==3)
                         {
-                                player->y--;
+                                player->x--;
                         }
                         player->moneycount-=1;
                         tip_move(map,player);
                         map[player->x][player->y]=BEENROAD;    //走过的路
                         printmap (map,player);
-                        if (!player->lifestyle)//死了
+                        if (player->lifestyle!=0)//死了
                         {
                                 return 0;
                         }

@@ -1,7 +1,9 @@
+#include "engine.h"
+#include "function.h"
 
 void help()
 {
-    
+
     printf("主角一开始位于随机的小方块\n");
     printf("每个小方格可能是空的，也可能有陷阱、怪兽或金币\n");
     printf("陷阱所在的方格和上、下、左、右四个相邻的方格内有微风\n");
@@ -14,16 +16,16 @@ void help()
     printf("主角射箭时，前方最近的一个怪兽被射死，怪兽会发出惨叫声；如果前进方向上没有怪兽，主角可以听到箭头撞击墙壁发出的声音\n");
     printf("主角如果进入有怪兽或陷阱的方格，主角立即死亡并结算游戏分数\n");
     printf("游戏的目的是获得地图上的所有金币，或在主角死亡前获得尽可能多的金币\n");
-    
+
 }
 void start(int m_map[100][100],struct MAN *player)
 {
-    printf("选择模式：1.简单；2.中等；3.难；4.自定义");
+    printf("选择模式：1.简单；2.中等；3.难；4.自定义\n");
     char ch =_getch();
     int i,j,k;
     switch(ch)
     {
-            
+
         case '1':  creatmap(m_map,1,0,0,0,player);break;
         case '2':  creatmap(m_map,2,0,0,0,player);break;
         case '3':  creatmap(m_map,3,0,0,0,player);break;

@@ -1,4 +1,6 @@
-
+#include <stdio.h>
+#include "engine.h"
+#include "function.h"
 void paihangbang_r()
 {
 
