@@ -1,4 +1,3 @@
-
 void tip_move(int map[100][100],struct MAN *player)
 {
     const int x[4]={0,1,0,-1};
@@ -55,25 +54,25 @@ int tip_shoot(int map[100][100],struct MAN *player)
     switch(player->faceto)
     {
         case 'e' :
-            {int i ;
+        {int i ;
             for(i=player->x;map[i][player->y]!=WALL;i++)
                 if(map[i][player->y]==MONSTER) {map[i][player->y]=UNROAD;printf("您杀死了怪物\n");flag=1;break;}
             if(map[i][player->y]==WALL) printf("您的箭射到了墙上，并发出了咚的一声\n");
             break;}
         case 's' :
-            {int i ;
+        {int i ;
             for(i=player->y;map[player->x][i]!=WALL;i--)
                 if(map[player->x][i]==MONSTER) {map[player->x][i]=UNROAD;printf("您杀死了怪物\n");flag=1;break;}
             if(map[player->x][i]==WALL) printf("您的箭射到了墙上，并发出了咚的一声\n");
             break;}
         case 'w' :
-            {int i ;
+        {int i ;
             for(i=player->x;map[i][player->y]!=WALL;i--)
                 if(map[i][player->y]==MONSTER){map[i][player->y]=UNROAD;printf("您杀死了怪物\n");flag=1;break;}
             if(map[i][player->y]==WALL) printf("您的箭射到了墙上，并发出了咚的一声\n");
             break;}
         case 'n' :
-           {int i ;
+        {int i ;
             for(i=player->y;map[player->x][i]!=WALL;i++)
                 if(map[player->x][i]==MONSTER) {map[player->x][i]=UNROAD;printf("您杀死了怪物\n");flag=1;break;}
             if(map[player->x][i]==WALL) printf("您的箭射到了墙上，并发出了咚的一声\n");

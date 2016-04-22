@@ -1,5 +1,4 @@
 
-
 void help()
 {
     
@@ -21,15 +20,15 @@ void start(int m_map[100][100],struct MAN *player)
 {
     printf("选择模式：1.简单；2.中等；3.难；4.自定义");
     char ch =_getch();
-     int i,j,k;
+    int i,j,k;
     switch(ch)
     {
             
         case '1':  creatmap(m_map,1,0,0,0,player);break;
         case '2':  creatmap(m_map,2,0,0,0,player);break;
         case '3':  creatmap(m_map,3,0,0,0,player);break;
-        case '4': 
-           printf("输入怪物数量，陷阱数量和金币数量：\n");
+        case '4':
+            printf("输入怪物数量，陷阱数量和金币数量：\n");
             scanf("%d%d%d",&i,&j,&k);
             getchar();
             creatmap(m_map,4,i,j,k,player);
@@ -42,5 +41,5 @@ void start(int m_map[100][100],struct MAN *player)
         scanf("%s",num);
         paihangbang_w(player->moneycount,num);}
     else printf("您输了\n");
-        return ;
+    return ;
 }
